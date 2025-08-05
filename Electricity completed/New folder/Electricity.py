@@ -83,10 +83,9 @@ with col1:
             st.table(df)
 
             with col2:
-                st.button("Reset")
-
-            with col1:
-                st.markdown("ℹ️ Enter your usage details in Column 1.")
+                if st.button("Reset"):
+                    st.session_state["pre"] = 0
+                    st.session_state["cur"] = 0
 
 
         except Exception as e:
